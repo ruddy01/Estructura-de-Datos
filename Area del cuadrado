@@ -1,0 +1,22 @@
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+
+using namespace std;
+
+
+int main()
+{
+	int Base;
+	int Altura;
+	float A;
+
+		cout<<"Ingrese la Base porfavor: ";
+		cin>>Base;
+		cout<<"Ingrese la altura: ";
+		cin>>Altura;
+
+		A= Base*Altura/2;
+		cout<<" El Area del cuadrado es= "<<  A  <<endl;
+
+		system("pause");
