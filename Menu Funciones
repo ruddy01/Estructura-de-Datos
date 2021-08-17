@@ -1,0 +1,109 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+float Area_Cuadrado();
+float Area_Circulo();
+float Area_triangulo();
+int encontrarMax(int x, int y);
+int encontrarMin (int x, int y);
+
+void main()
+{
+	int lado, opcion;
+	int n1,n2;
+	float area;
+	do {
+		cout << endl;
+		cout << "---------MENU--------" << endl;
+		cout << "1.sacar area cuadrado" << endl;
+		cout << "2.sacar area circulo" << endl;
+		cout << "3.sacar area triangulo" << endl;
+		cout << "4.Sacar el mayor valor de 2 numeritos "<< endl;
+		cout << "5.Sacar el menor valor de 2 numeritos "<< endl;
+		cout << "6.salir" << endl;
+		cin >> opcion;
+		switch (opcion) {
+		case 1: area = Area_Cuadrado();
+			cout << area;
+			cout << "cm^2";
+			break;
+		case 2: area = Area_Circulo();
+			cout << area;
+			cout << "cm^2";
+			break;
+		case 3: area = Area_triangulo();
+			cout << area;
+			cout << "cm^2";
+			break;
+		case 4: 
+			cout <<"digitar 2 numeros";
+			cin>>n1>>n2;
+			cout<< "El mayorcito es : " <<encontrarMax(n1,n2)<<endl;
+			break;
+		case 5:
+			cout <<" digitar 2 numeros ";
+			cin>>n1>>n2;
+			cout<<"El menorcito es : " <<encontrarMin (n1,n2)<<endl;
+			break;
+		case 6: cout << "salir";
+			break;
+		default: cout << "error" << endl;
+			break;
+		}
+	} while (opcion != 6);
+	getch();
+}
+float Area_Cuadrado()
+{
+	float area, lado, altura;
+	cout << "pedir lado en cm: ";
+	cin >> lado;
+	area = lado * lado;
+	return area;
+}
+float Area_Circulo()
+{
+	float area,lado, altura;
+	cout << "pedir lado en cm: ";
+	cin >> lado;
+	area = (lado / 2) * (lado / 2) * 3.14156;
+	return area;
+}
+float Area_triangulo()
+{
+	float area,lado,altura;
+	cout << "pedir lado en cm: ";
+	cin >> lado;
+	cout << "pedir altura en cm : ";
+	cin >> altura;
+	area = ( lado * altura) / 2;
+	return area;
+}
+
+int encontrarMax(int x, int y)
+{
+	int numMax;
+	if(x>y){
+	    numMax = x;
+	}
+	else {
+		numMax = y;
+	}
+	return numMax;
+
+}
+
+int encontrarMin (int x, int y)
+{
+       int numMin ;
+	   if(x<y){
+	    numMin= x;
+	   }
+	   else{
+	   numMin = y;
+	   }
+	   return numMin;
+}
